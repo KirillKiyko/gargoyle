@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+    <html >
+    <head>
+        <title>Gargoyle</title>
+    </head>
+    <body>
+        <span>{{success}}</span>
+        <h1>Contact</h1>
+            {% if messages %}
+                {% for message in messages %}
+                  <span class="{{ message.tags }}">{{ message }}</span>
+                {% endfor %}
+            {% endif %}
+            <form role="form" action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>
+    </body>
