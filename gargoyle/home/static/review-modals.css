@@ -1,0 +1,327 @@
+#learn_more_user{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px;
+    top: 15vh;
+    left: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(source/cross.png);
+    background-position: center center;
+  }
+  
+  .learn_modal-user{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color:#272727;
+    z-index: 18;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out 0s;
+    background-image: url(source/python.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+  }
+  
+  .tech-more > input:checked ~ .learn_modal-user{
+    transform: translateX(0%);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+  }
+
+  #learn_more_user2{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px;
+    top: 15vh;
+    left: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(source/cross.png);
+    background-position: center center;
+  }
+  
+  .learn_modal-user2{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color:#272727;
+    z-index: 18;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out 0s;
+    background-image: url(source/python.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+  }
+  
+  .tech-more > input:checked ~ .learn_modal-user2{
+    transform: translateX(0%);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+  }
+
+  #learn_more_user3{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px;
+    top: 15vh;
+    left: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(source/cross.png);
+    background-position: center center;
+  }
+  
+  .learn_modal-user3{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color:#272727;
+    z-index: 18;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out 0s;
+    background-image: url(source/python.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+  }
+  
+  .tech-more > input:checked ~ .learn_modal-user3{
+    transform: translateX(0%);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+  }
+
+  #learn_more_user4{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px;
+    top: 15vh;
+    left: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(source/cross.png);
+    background-position: center center;
+  }
+  
+  .learn_modal-user4{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color:#272727;
+    z-index: 18;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out 0s;
+    background-image: url(source/python.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+  }
+  
+  .tech-more > input:checked ~ .learn_modal-user4{
+    transform: translateX(0%);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+  }
+
+  #learn_more_user5{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px;
+    top: 15vh;
+    left: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(source/cross.png);
+    background-position: center center;
+  }
+  
+  .learn_modal-user5{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color:#272727;
+    z-index: 18;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out 0s;
+    background-image: url(source/python.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+  }
+  
+  .tech-more > input:checked ~ .learn_modal-user5{
+    transform: translateX(0%);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+  }
+
+  #learn_more_user6{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px;
+    top: 15vh;
+    left: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(source/cross.png);
+    background-position: center center;
+  }
+  
+  .learn_modal-user6{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color:#272727;
+    z-index: 18;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out 0s;
+    background-image: url(source/python.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+  }
+  
+  .tech-more > input:checked ~ .learn_modal-user6{
+    transform: translateX(0%);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+  }
+
+  #learn_more_user7{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px;
+    top: 15vh;
+    left: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(source/cross.png);
+    background-position: center center;
+  }
+  
+  .learn_modal-user7{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color:#272727;
+    z-index: 18;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out 0s;
+    background-image: url(source/python.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+  }
+  
+  .tech-more > input:checked ~ .learn_modal-user7{
+    transform: translateX(0%);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+  }
+
+  #learn_more_user8{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px;
+    top: 15vh;
+    left: 30px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    background-image: url(source/cross.png);
+    background-position: center center;
+  }
+  
+  .learn_modal-user8{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color:#272727;
+    z-index: 18;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out 0s;
+    background-image: url(source/python.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+  }
+  
+  .tech-more > input:checked ~ .learn_modal-user8{
+    transform: translateX(0%);
+    -webkit-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -5px 0px 5px 0px rgba(0,0,0,0.4);
+  }

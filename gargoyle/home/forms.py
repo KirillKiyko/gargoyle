@@ -1,16 +1,26 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
 # our new form
 class ContactForm(forms.Form):
     contact_name = forms.CharField(required=True)
     contact_email = forms.EmailField(required=True)
-    content = forms.CharField(
-        required=True,
-        widget=forms.Textarea
-    )
+    content = forms.CharField(required=True)
 
-    def __init__(self, *args, **kwargs):
-        super(ContactForm, self).__init__(*args, **kwargs)
-        self.fields['contact_name'].label = "Your name:"
-        self.fields['contact_email'].label = "Your email:"
-        self.fields['content'].label = "What do you want to say?"
+    def clean_contact_name(self):
+        contact_name = self.cleaned_data['contact_name']
+        if contact_name == '':
+            raise ValidationError('Field Name is required')
+        return contact_name
+
+    def clean_contact_email(self):
+        contact_email = self.cleaned_data['contact_email']
+        if contact_email == '':
+            raise ValidationError('Field Email is required')
+        return contact_email
+
+    def clean_content(self):
+        content = self.cleaned_data['content']
+        if content == '':
+            raise ValidationError('Enter your message before send email.')
+        return content

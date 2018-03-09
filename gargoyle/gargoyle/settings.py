@@ -100,6 +100,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "home/static"),
+)
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -122,8 +126,14 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = '/home/kirillkiyko/Downloads/REED_django/reed/login_page/static/'
 
+MEDIA_URL = '/source/'
+
+MEDIA_ROOT = '/home/kirillkiyko/Downloads/REED_django/reed/login_page/static/source/'
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'kijko97@gmail.com'
 EMAIL_HOST_PASSWORD = 'k0993471729'
 EMAIL_USE_TLS = True
+
+SITE_URL = 'http://127.0.0.1:8000'

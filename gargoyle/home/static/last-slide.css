@@ -1,0 +1,236 @@
+.title-last{
+    position: fixed;
+    font-size: 45px;
+    color: #b0a071;
+    position: fixed;
+    top: 40px;
+    left: 0;
+  }
+
+  .title-number-last{
+    float: left;
+  }
+
+  .title-line-last{
+    float: left;
+    margin-top: 25px;
+    margin-right: 20px;
+    width: 50px;
+    border-bottom: 2px solid #b0a071;
+  }
+
+  .title-line-last:nth-child(n+2){
+      margin-left: 20px;
+
+  }
+
+  .title-name-last{
+    float: left;
+  }
+
+  .top-corner-last{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background-image: url(source/top_corner.png);
+  }
+
+  .bot-corner-last{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    background-image: url(source/bot_corner.png);
+  }
+
+  .socials-last{
+    position: fixed;
+    right: 3vw;
+    bottom: 30px;
+    z-index: 1;
+}
+
+.twitter-last{
+    float: left;
+}
+
+.twitter-last img{
+    width: 30px;
+    height: 30px;
+}
+
+.facebook-last{
+    float: left;
+}
+
+.facebook-last img{
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.contact-header{
+    position: fixed;
+    margin-top: 30vh;
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color:#fff;
+}
+
+.contact-form{
+    top: 40vh;
+    position: fixed;
+    z-index: 1;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+  #contact-button{
+      opacity: 0;
+  }
+  #contact-label{
+    width: 30%;
+    height: 50px;
+    overflow: hidden;
+    margin: 0 auto;
+    color: #b0a071;
+    font-size: 25px;
+    font-weight: 100;
+    border: 1px solid #b0a071;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  #contact-label:hover{
+      cursor: pointer;
+  }
+
+  #form-success{
+      position: relative;
+      float: left;
+      width: 97%;
+      margin-left: 1.5%;
+      max-height: 0px;
+      text-align: center;
+      color: #b0a071;
+      overflow: hidden;
+      animation: success 10s ease-in-out 5s alternate;
+      padding-bottom: 0px;
+  }
+
+  @keyframes success{
+      0%{
+          max-height: 0px;
+          border-bottom: none;
+          padding-bottom: 0px;
+      }
+      10%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      20%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      30%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      40%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      50%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      60%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      70%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      80%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      90%{
+        max-height: 30px;
+        border-bottom: 1px solid #b0a071;
+        padding-bottom: 15px;
+      }
+      100%{
+        max-height: 0px;
+        border-bottom: none;
+        padding-bottom: 0px;
+      }
+  }
+
+  .input-field>input[type=text]{
+      border-bottom-color: #b0a071;
+  }
+  .input-field>input[type=email]{
+    border-bottom-color: #b0a071;
+  }
+  .input-field>textarea{
+    border-bottom-color: #b0a071;
+  }
+  /* label color */
+  .input-field label {
+    color: #b0a071;
+  }
+  .input-field textarea{
+      color:#b0a071;
+  }
+  /* label focus color */
+  .input-field input:focus + label {
+    color: #b0a071 !important;
+  }
+
+  .input-field textarea:focus + label {
+    color: #b0a071 !important;
+  }
+  /* label underline focus color */
+  .input-field input:focus {
+    color:#b0a071 !important;
+    border-bottom: 2px solid #b0a071 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+  }
+  .input-field textarea:focus {
+    color:#b0a071 !important;
+    border-bottom: 2px solid #b0a071 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #b0a071;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #b0a071;
+    box-shadow: 0 1px 0 0 #b0a071;
+  }
+
+  .input-field input[type=email].invalid {
+    border-bottom: 1px solid #b0a071;
+    box-shadow: 0 1px 0 0 #b0a071;
+  }

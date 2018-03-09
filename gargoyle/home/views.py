@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import ContactForm
 from django.core.mail import EmailMessage
-from django.shortcuts import redirect
+from django.shortcuts import redirect, HttpResponseRedirect
 from django.template.loader import get_template
 from django.contrib import messages
 
@@ -11,7 +11,9 @@ def index(request):
 
     # new logic!
     if request.method == 'POST':
-        form = form_class(data=request.POST)
+        form = form_class(data={'contact_name': request.POST['contact_name'],
+                                'contact_email': request.POST['contact_email'],
+                                'content': request.POST['content']})
 
         if form.is_valid():
             contact_name = request.POST.get(
@@ -41,7 +43,7 @@ def index(request):
             )
             email.send()
             messages.success(request, 'Thank you for your message', extra_tags='alert')
-            return redirect('index')
+            return render(request, 'index.html')
 
     return render(request, 'index.html', {
         'form': form_class,
