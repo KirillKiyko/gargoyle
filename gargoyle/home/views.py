@@ -1,21 +1,23 @@
+import json
+
 from django.shortcuts import render
 from .forms import ContactForm
 from django.core.mail import EmailMessage
-from django.shortcuts import redirect, HttpResponseRedirect
 from django.template.loader import get_template
-from django.contrib import messages
+from django.http import HttpResponse
 
 
 def index(request):
     form_class = ContactForm
 
-    # new logic!
     if request.method == 'POST':
+        print(request.POST)
         form = form_class(data={'contact_name': request.POST['contact_name'],
                                 'contact_email': request.POST['contact_email'],
                                 'content': request.POST['content']})
 
         if form.is_valid():
+            print(True)
             contact_name = request.POST.get(
                 'contact_name'
             , '')
@@ -42,14 +44,9 @@ def index(request):
                 headers = {'Reply-To': contact_email }
             )
             email.send()
-            messages.success(request, 'Thank you for your message', extra_tags='alert')
-            return render(request, 'index.html')
+            return HttpResponse(json.dumps({'message': 'Thank you for your message'}))
 
     return render(request, 'index.html', {
         'form': form_class,
     })
-
-
-# # add to your views
-# def contact(request):
 

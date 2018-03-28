@@ -132,8 +132,8 @@ MEDIA_ROOT = '/home/kirillkiyko/Downloads/REED_django/reed/login_page/static/sou
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'kijko97@gmail.com'
+EMAIL_HOST_PASSWORD = 'k0993471729'
 EMAIL_USE_TLS = True
 
 SITE_URL = 'http://127.0.0.1:8000'

@@ -772,13 +772,9 @@
         Leave Your contacts in form below and we will get in touch with You!
     </div>
     <div class="contact-form">
-    <form class="col s12" action="" method="post">{% csrf_token %}
+    <form class="col s12" method="post" id="test">{% csrf_token %}
         <div class="row" >
-            {% if messages %}
-                {% for message in messages %}
-            <span class="{{ message.tags }}" id="form-success">{{ message }}</span>
-                {% endfor %}
-            {% endif %}
+            <span id="form-success" style="display: none;"></span>
             <div class="input-field col s6">
               <input id="contact_name" name="contact_name" type="text" class="validate" required>
               <label class="active" for="contact_name">Name</label>
@@ -817,6 +813,7 @@
         </div>
 
         <script src="{% static '/slider.js' %}"></script>
+        <script src="{% static '/submiting_form.js' %}"
         <script>
                 $('#textarea1').val('New Text');
             $('#textarea1').trigger('autoresize');

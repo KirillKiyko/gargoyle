@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-# our new form
+
 class ContactForm(forms.Form):
     contact_name = forms.CharField(required=True)
     contact_email = forms.EmailField(required=True)
@@ -13,11 +13,13 @@ class ContactForm(forms.Form):
             raise ValidationError('Field Name is required')
         return contact_name
 
+
     def clean_contact_email(self):
         contact_email = self.cleaned_data['contact_email']
         if contact_email == '':
             raise ValidationError('Field Email is required')
         return contact_email
+
 
     def clean_content(self):
         content = self.cleaned_data['content']
