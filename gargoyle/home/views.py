@@ -11,13 +11,11 @@ def index(request):
     form_class = ContactForm
 
     if request.method == 'POST':
-        print(request.POST)
         form = form_class(data={'contact_name': request.POST['contact_name'],
                                 'contact_email': request.POST['contact_email'],
                                 'content': request.POST['content']})
 
         if form.is_valid():
-            print(True)
             contact_name = request.POST.get(
                 'contact_name'
             , '')

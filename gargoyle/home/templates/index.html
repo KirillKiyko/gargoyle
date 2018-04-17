@@ -1,829 +1,927 @@
 <!DOCTYPE html>
 {% load static %}
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>GARGOYLE LTD.</title>
-	<meta name="author" content="" />
-	<meta name="description" content="" />
-	<meta name="keywords"  content="" />
-	<meta name="Resource-type" content="Document" />
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <meta charset="utf-8">
+    <title>GARGOYLE.LTD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="{% static '/review-modals.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static '/style.css'%}" />
-    <link rel="stylesheet" href="{% static '/last-slide.css'%}">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{% static '/scroll.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static '/style.css'%}">
+    <link rel="stylesheet" href="{% static '/last-slide.css'%}">
+    <link rel="stylesheet" href="{% static '/mobile.css' %}">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{% static '/slider.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+            min-height: 85vh;
+        }
+
+        body {
+            background: #eee;
+            font-size: 14px;
+            color: #272727;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            display: block !important;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: left;
+            font-size: 18px;
+            background: transparent;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .swiper-container-v {
+            background: #272727;
+        }
+
+        .swiper-button-next {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+        }
+
+        .swiper-button-prev {
+            left: 5vw !important;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+        }
+
+        .review-button-next {
+            right: 10px !important;
+        }
+
+        .review-button-prev {
+            left: 10px !important;
+        }
+    </style>
 </head>
-<body>
- 
 
-        <section class="background">
+<body class="body">
+    <script type="text/javascript">
+        //<![CDATA[
 
+        $(window).on('load', function () {
+            $('#preloader').delay(1000).fadeOut('slow'); // will fade out the DIV that covers the website. 
+            $('body').delay(350).css({ 'overflow': 'visible' });
+        })
+  //]]>
+    </script>
+    <div id="preloader">
+    </div>
+    
+    <!-- Swiper -->
+    <div class="swiper-container swiper-container-v">
+            <div>
+                    <div class="learn_modal-java" id="modal-java">
+                        <label id="learn_more_java"></label>
+                        <div class="learn-modal-content">
+                            <div class="learn-modal-header">
+                                Java
+                            </div>
+                            <div class="learn-modal-sides">
+                                Artificial Intelligence, Computer Vision, Data Science, Machine Learning, Natural Language Processing
+                            </div>
+                            <div class="learn-modal-desc">
+                                Description:
+                            </div>
+                            <div class="learn-modal-desctext">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.
+                            </div>
+                        </div>
 
-            <div class="video-container">
+                    </div>
+                    <div class="close-area-java"></div>
+                </div>
+                <div>
+                    <div class="learn_modal-python" id="modal-python">
+                        <label id="learn_more_python" for="learn_check_python"></label>
+                        <div class="learn-modal-content">
+                            <div class="learn-modal-header">
+                                Python
+                            </div>
+                            <div class="learn-modal-sides">
+                                Artificial Intelligence, Computer Vision, Data Science, Machine Learning, Natural Language Processing
+                            </div>
+                            <div class="learn-modal-desc">
+                                Description:
+                            </div>
+                            <div class="learn-modal-desctext">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="close-area-python"></div>
+                </div>
+                <div>
+                    <div class="learn_modal-js" id="modal-js">
+                        <label id="learn_more_js" for="learn_check_js"></label>
+                        <div class="learn-modal-content">
+                            <div class="learn-modal-header">
+                                JavaScript
+                            </div>
+                            <div class="learn-modal-sides">
+                                Artificial Intelligence, Computer Vision, Data Science, Machine Learning, Natural Language Processing
+                            </div>
+                            <div class="learn-modal-desc">
+                                Description:
+                            </div>
+                            <div class="learn-modal-desctext">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="close-area-js"></div>
+                </div>
+                <div>
+                    <div class="learn_modal-swift" id="modal-swift">
+                        <label id="learn_more_swift" for="learn_check_swift"></label>
+                        <div class="learn-modal-content">
+                            <div class="learn-modal-header">
+                                Swift
+                            </div>
+                            <div class="learn-modal-sides">
+                                Artificial Intelligence, Computer Vision, Data Science, Machine Learning, Natural Language Processing
+                            </div>
+                            <div class="learn-modal-desc">
+                                Description:
+                            </div>
+                            <div class="learn-modal-desctext">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="close-area-swift"></div>
+                </div>
+                <div>
+                    <div class="learn_modal-swift" id="modal-review">
+                        <label id="learn_more_review"></label>
+                        <div class="learn-modal-content">
+                            <div class="learn-modal-header">
+                                Sachin Kumar
+                            </div>
+                            <div class="learn-modal-sides">
+                                Some sort of manager
+                            </div>
+                            <div class="learn-modal-desc">
+                                Review:
+                            </div>
+                            <div class="learn-modal-desctext">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="close-area-review"></div>
+                </div>
+        <div class="parallax-bg" style="background-image:url(static/source/slider_bg.png)" data-swiper-parallax-x="-23%"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" data-hash="home">
 
-                <video autoplay loop id="myvid">
-                    <source src="{% static '/source/bg.mp4' %}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
-                <div class="poster hidden">
+                <div class="poster"></div>
 
+                <div class="filter"></div>
+
+                <div class="intro-content">
+                    <div class="intro-title-wrapper">
+                        <div class="intro-line-before"></div>
+                        <h2>GARGOYLE</h2>
+                        <div class="intro-line-after"></div>
+                    </div>
+                    <div class="phrase" data-swiper-parallax="0%">
+                        Perfection is Achieved Not When There is Nothing More to Add, But When There is Nothing Left to Take Away
+                    </div>
+                    <div class="socials">
+                        <div class="inst">
+                            <a href="#">
+                                <img src="{% static '/source/instagram-new.png' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="twitter">
+                            <a href="#">
+                                <img src="{% static '/source/twitter-icon.png' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="facebook">
+                            <a href="#">
+                                <img src="{% static '/source/facebook_new.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="filter">
-                 
-                </div>
-            <div class="intro-content">
-                <div class="intro-title-wrapper">
-                <div class="intro-line-before"></div>
-                    <h2>GARGOYLE</h2>  
-                <div class="intro-line-after"></div>
-                </div>
-                <div class="phrase">
-                    Perfection is Achieved Not When There is Nothing More to Add, But When There is Nothing Left to Take Away
-                </div> 
-                <div class="socials">
-                    <div class="twitter">
-                        <a href="#"><img src="{% static '/source/twitter.png' %}" alt=""></a>
-                    </div>
-                    <div class="facebook">
-                            <a href="#"><img src="{% static '/source/facebook.png' %}" alt=""></a>
-                    </div>
-                </div>  
-             </div>
-
-        </section>
-
-        <!--About section-->
-        <section class="background">
-
-            <!--Page title-->
-            <div class="title">
-                <div class="title-line">
-
-                </div>
-                <div class="title-number">
-                    02
-                </div>
-                <div class="title-line">
-
-                </div>
-                <div class="title-name">
-                    About Us
-                </div>
-            </div>
-
-            <!--Corners-->
-            <div class="top-corner"></div>
-            <div class="bot-corner"></div>
-
-            <!--Content block-->
-            <div class="about-content">
-                <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                          Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                           laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate
-                             velit esse cillum dolore eu fugiat nulla pariatur.
-                             Excepteur sint occaecat cupidatat non proident,
-                             sunt in culpa qui officia deserunt mollit anim 
-                             id est laborum.Excepteur sint occaecat cupidatat non proident,
-                             sunt in culpa qui officia deserunt mollit.
-                </p>
-            </div>
-            <div class="socials">
-                    <div class="twitter">
-                        <a href="#"><img src="{% static '/source/twitter.png' %}" alt=""></a>
-                    </div>
-                    <div class="facebook">
-                            <a href="#"><img src="{% static '/source/facebook.png' %}" alt=""></a>
-                    </div>
-                </div> 
-        </section>
-
-        <!--Tech page-->
-        <section class="background">
             
+            <div class="swiper-slide" data-hash="about">
+
                 <!--Page title-->
-                <div class="title">
+                <div class="title" data-swiper-parallax-x="0%" data-swiper-parallax-opacity="0">
                     <div class="title-line">
+
+                    </div>
+                    <div class="title-name">
+                        About Us
+                    </div>
+                </div>
+
+                <!--Corners-->
+                <div class="top-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
+                <div class="bot-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
+
+                <!--Content block-->
+                <div class="about-content" data-swiper-parallax="0%" data-swiper-parallax-opacity="0">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit.
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide" data-hash="tech">
+
+                <!--Corners-->
+                <div class="top-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
+                <div class="bot-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
+
+                <!--TECH SLIDER-->
+                <div class="swiper-container swiper-container-tech">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+
+                            <!--First card-->
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <img src="{% static '/source/python_icon.png' %}" alt="">
+                                </div>
+                                <div class="tech-name">
+                                    Python
+                                </div>
+                                <div class="tech-side">
+                                    Back-end
+                                    <br> Development
+                                </div>
+                                <div class="tech-more">
+                                    <input type="button" id="learn_python" name="more" style="display: block;opacity: 1;" value="Learn more">
+                                </div>
+                            </div>
+                            <!--First card-->
+
+                        </div>
+                        <div class="swiper-slide">
+
+                            <!--First card-->
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <img src="{% static '/source/js_icon.png' %}" alt="">
+                                </div>
+                                <div class="tech-name">
+                                    JavaScript
+                                </div>
+                                <div class="tech-side">
+                                    Front-end
+                                    <br> Development
+                                </div>
+                                <div class="tech-more">
+        
+                                    <input type="button" id="learn_js" name="more" style="display: block;opacity: 1;" value="Learn more">
+        
+        
+                                </div>
+                            </div>                            <!--First card-->
+
+                        </div>
+                        <div class="swiper-slide">
+
+                            <!--First card-->
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <img src="{% static '/source/java_icon.png' %}" alt="">
+                                </div>
+                                <div class="tech-name">
+                                    Java
+                                </div>
+                                <div class="tech-side">
+                                    Android
+                                    <br> Development
+                                </div>
+                                <div class="tech-more">
+                                    <input type="button" id="learn_java" name="more" style="display: block;opacity: 1;" value="Learn more">
+                                </div>
+        
+                            </div>
+                            <!--First card-->
+
+                        </div>
+                        <div class="swiper-slide">
+
+                            <!--First card-->
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <img src="{% static '/source/swift_icon.png' %}" alt="">
+                                </div>
+                                <div class="tech-name">
+                                    Swift
+                                </div>
+                                <div class="tech-side">
+                                    IOS
+                                    <br> Development
+                                </div>
+                                <div class="tech-more">
+                                    <input type="button" id="learn_swift" name="more" style="display: block;opacity: 1;" value="Learn more">
+                                </div>
+                            </div>
+                            <!--First card-->
+
+                        </div>
+
+                    </div>
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination swiper-pagination-tech"></div>
+                    <div class="tech-button-prev swiper-button-prev swiper-button-white"></div>
+                    <div class="tech-button-next swiper-button-next swiper-button-white"></div>
+                </div>
+
+
+
+
+
                 
-                    </div>
-                    <div class="title-number">
-                        03
-                    </div>
+                <!--Page title-->
+                <div class="title" data-swiper-parallax="0%" data-swiper-parallax-opacity="0">
                     <div class="title-line">
-                
+
                     </div>
                     <div class="title-name">
                         Technologies of success
                     </div>
                 </div>
-                            
-                <!--Corners-->
-                <div class="top-corner"></div>
-                <div class="bot-corner"></div>
-                
-                <!--Technologies cards-->
-                <div class="tech-card-wrapper">
-                    <div class="tech-card">
-                        <div class="tech-icon">
-                            <img src="{% static '/source/python_icon.png' %}" alt="">
-                        </div>
-                        <div class="tech-name">
-                        Python
-                        </div>
-                        <div class="tech-side">
-                            Server Side Development
-                        </div>
-                        <div class="tech-more">
-                            <input type="checkbox" id="learn_check_python" name="more" style="opacity: 0 !important;">
-                            <label id="learn_more" for="learn_check_python">Learn More</label>
-                            <div class="learn_modal-python">
-                                <label id="learn_more_python" for="learn_check_python"></label>
-                                <div class="learn-modal-content">
-                                    <div class="learn-modal-header">
-                                        Python
-                                    </div>
-                                    <div class="learn-modal-sides">
-                                            Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                    </div>
-                                    <div class="learn-modal-desc">
-                                        Description:
-                                    </div>
-                                    <div class="learn-modal-desctext">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
 
-                    <div class="tech-card">
-                            <div class="tech-icon">
-                                <img src="{% static '/source/js_icon.png' %}" alt="">
-                            </div>
-                            <div class="tech-name">
-                            JavaScript
-                            </div>
-                            <div class="tech-side">
-                                Client Side Development
-                            </div>
-                            <div class="tech-more">
+            <div class="swiper-slide" data-hash="portfolio">
+                <div class="title" data-swiper-parallax="0%" data-swiper-parallax-opacity="0">
+                    <div class="title-line">
 
-                                <input type="checkbox" id="learn_check_js" name="more">
-                                <label id="learn_more" for="learn_check_js">Learn More</label>
-                                
-                                <div class="learn_modal-js">
-                                        <label id="learn_more_js" for="learn_check_js"></label>
-                                        <div class="learn-modal-content">
-                                                <div class="learn-modal-header">
-                                                    JavaScript
-                                                </div>
-                                                <div class="learn-modal-sides">
-                                                        Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                                </div>
-                                                <div class="learn-modal-desc">
-                                                    Description:
-                                                </div>
-                                                <div class="learn-modal-desctext">
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                                </div>
-                                            </div>
-                                    </div>
-                            </div>
                     </div>
-
-                    <div class="tech-card">
-                                <div class="tech-icon">
-                                    <img src="{% static '/source/java_icon.png' %}" alt="">
-                                </div>
-                                <div class="tech-name">
-                                Java
-                                </div>
-                                <div class="tech-side">
-                                    Android Development
-                                </div>
-                                <div class="tech-more">
-                                    <label id="learn_more" for="learn_check_java">Learn More</label>
-                                    <input type="checkbox" id="learn_check_java" name="more">
-                                    <div class="learn_modal-java">
-                                            <label id="learn_more_java" for="learn_check_java"></label>
-                                            <div class="learn-modal-content">
-                                                    <div class="learn-modal-header">
-                                                        Java
-                                                    </div>
-                                                    <div class="learn-modal-sides">
-                                                            Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                                    </div>
-                                                    <div class="learn-modal-desc">
-                                                        Description:
-                                                    </div>
-                                                    <div class="learn-modal-desctext">
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                                    </div>
-                                                </div>
-                                        </div>
-                                </div>
-                    </div>
-                    <div class="tech-card">
-                                    <div class="tech-icon">
-                                        <img src="{% static '/source/swift_icon.png' %}" alt="">
-                                    </div>
-                                    <div class="tech-name">
-                                    Swift
-                                    </div>
-                                    <div class="tech-side">
-                                        IOS Development
-                                    </div>
-                                    <div class="tech-more">
-                                        <label id="learn_more" for="learn_check_swift">Learn More</label>
-                                        <input type="checkbox" id="learn_check_swift" name="more">
-                                        <div class="learn_modal-swift">
-                                                <label id="learn_more_swift" for="learn_check_swift"></label>
-                                                <div class="learn-modal-content">
-                                                        <div class="learn-modal-header">
-                                                            Swift
-                                                        </div>
-                                                        <div class="learn-modal-sides">
-                                                                Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                                        </div>
-                                                        <div class="learn-modal-desc">
-                                                            Description:
-                                                        </div>
-                                                        <div class="learn-modal-desctext">
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                                        </div>
-                                                    </div>
-                                            </div>
-                                    </div>
+                    <div class="title-name">
+                        Projects we've done
                     </div>
                 </div>
-                
-                <!--Socials-->
-                <div class="socials">
-                        <div class="twitter">
-                            <a href="#"><img src="{% static '/source/twitter.png' %}" alt=""></a>
-                        </div>
-                        <div class="facebook">
-                                <a href="#"><img src="{% static '/source/facebook.png' %}" alt=""></a>
-                        </div>
-                    </div> 
-          </section>
-<!--Portfolio-->
-          <section class="background">
-                <div class="slider-container">
-                        <div class="slider-control left inactive"></div>
-                        <div class="slider-control right"></div>
-                        <ul class="slider-pagi"></ul>
-                        <div class="slider">
-                            <div class="slide slide-0 active">
-                                <div class="slide__bg"></div>
-                                <div class="slide__content">
-                                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                                        <path class="slide__overlay-path" d="M0,0 405,0 150,405 0,405" />
-                                    </svg>
-                                    <div class="slide__text">
-                                            <h2 class="slide__text-heading">Project 2</h2>
-                                            <p class="slide__text-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam minus illo debitis nihil animi facere, doloremque voluptate tempore quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam minus illo debitis nihil animi facere, doloremque voluptate tempore quia.</p>
-                                            <a class="slide__text-link">Visit Project</a>
-                                    </div>
+                <!--Corners-->
+                <div class="top-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
+                <div class="bot-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
+
+                <div class="swiper-container swiper-container-h">
+                    <div class="swiper-wrapper" id="works-slider-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slider-content-wrapper" data-swiper-parallax="-15%">
+                                <div class="slider-image" data-swiper-parallax="-20%">
+                                    <img src="static/source/identifai.png" alt="">
+                                </div>
+                                <div class="slider-title" data-swiper-parallax="-15%">Identifai</div>
+                                <div class="slider-subtitle" data-swiper-parallax="-10%">Web Service</div>
+                                <div class="slider-text" data-swiper-parallax="-10%">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit,
+                                        sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
+                                        Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
+                                        euismod.
+                                        <br>
+                                        <br>
+                                        <a href="#">Visit Project</a>
+                                    </p>
                                 </div>
                             </div>
-                            <div class="slide slide-1 ">
-                                <div class="slide__bg"></div>
-                                <div class="slide__content">
-                                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                                        <path class="slide__overlay-path" d="M0,0 405,0 150,405 0,405" />
-                                    </svg>
-                                    <div class="slide__text">
-                                        <h2 class="slide__text-heading">Project 2</h2>
-                                        <p class="slide__text-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam minus illo debitis nihil animi facere, doloremque voluptate tempore quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam minus illo debitis nihil animi facere, doloremque voluptate tempore quia.</p>
-                                        <a class="slide__text-link">Visit Project</a>
-                                    </div>
+                        </div>
+                        <div class="swiper-slide">
+
+                            <div class="slider-content-wrapper" data-swiper-parallax="-15%">
+                                <div class="slider-image" data-swiper-parallax="-20%">
+                                    <img src="static/source/identifai.png" alt="">
+                                </div>
+                                <div class="slider-title" data-swiper-parallax="-15%">Slide</div>
+                                <div class="slider-subtitle" data-swiper-parallax="-10%">Subtitle</div>
+                                <div class="slider-text" data-swiper-parallax="-10%">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit,
+                                        sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
+                                        Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
+                                        euismod.
+                                        <br>
+                                        <br>
+                                        <a href="#">Visit Project</a>
+                                    </p>
                                 </div>
                             </div>
-                            <div class="slide slide-2 ">
-                                    <div class="slide__bg"></div>
-                                    <div class="slide__content">
-                                        <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
-                                            <path class="slide__overlay-path" d="M0,0 405,0 150,405 0,405" />
-                                        </svg>
-                                        <div class="slide__text">
-                                                <h2 class="slide__text-heading">Project 2</h2>
-                                                <p class="slide__text-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam minus illo debitis nihil animi facere, doloremque voluptate tempore quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veniam minus illo debitis nihil animi facere, doloremque voluptate tempore quia.</p>
-                                                <a class="slide__text-link">Visit Project</a>
-                                        </div>
-                                    </div>
+
+                        </div>
+                        <div class="swiper-slide">
+
+                            <div class="slider-content-wrapper" data-swiper-parallax="-15%">
+                                <div class="slider-image" data-swiper-parallax="-20%">
+                                    <img src="static/source/identifai.png" alt="">
                                 </div>
+                                <div class="slider-title" data-swiper-parallax="-15%">Slide</div>
+                                <div class="slider-subtitle" data-swiper-parallax="-10%">Subtitle</div>
+                                <div class="slider-text" data-swiper-parallax="-10%">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit,
+                                        sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor.
+                                        Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
+                                        euismod.
+                                        <br>
+                                        <br>
+                                        <a href="#">Visit Project</a>
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-<!--Page title-->
-<div class="title">
-    <div class="title-line">
+                    <div class="swiper-pagination swiper-pagination-h"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                </div>
+            </div>
 
-    </div>
-    <div class="title-number">
-        04
-    </div>
-    <div class="title-line">
+            <!--Reviews Block-->
+            <div class="swiper-slide" data-hash="reviews">
+                <div class="title" data-swiper-parallax="0%" data-swiper-parallax-opacity="0">
+                    <div class="title-line">
 
-    </div>
-    <div class="title-name">
-        Works We've Done
-    </div>
-</div>
+                    </div>
+                    <div class="title-name">
+                        Thinking out loud
+                    </div>
+                </div>
+                <!--Corners-->
+                <div class="top-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
+                <div class="bot-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
 
-<!--Corners-->
+                <!-- Swiper -->
+                <div class="swiper-container swiper-container-review">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
 
-<div class="bot-corner"></div>
+                            <!--First card-->
+                            <div class="review-card">
+                                <div class="review-image">
+                                    <img src="{% static '/source/review_image.png' %}" alt="">
+                                </div>
+                                <div class="review-name">
+                                    Sachin Kumar
+                                </div>
+                                <div class="review-company">
+                                    Company Name
+                                </div>
+                                <div class="review-rate">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="review-button">
+                                        <input type="button" id="learn_review" name="more" style="display: block;opacity: 1;" value="Read more">
+                                </div>
+                            </div>
+                            <!--First card-->
 
+                        </div>
+                        <div class="swiper-slide">
+                            <!--First card-->
+                            <div class="review-card">
+                                <div class="review-image">
+                                    <img src="{% static '/source/review_image.png' %}" alt="">
+                                </div>
+                                <div class="review-name">
+                                    Sachin Kumar
+                                </div>
+                                <div class="review-company">
+                                    Company Name
+                                </div>
+                                <div class="review-rate">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="review-button">
+                                        <input type="button" id="learn_review" name="more" style="display: block;opacity: 1;" value="Read more">
+                                </div>
+                            </div>
+                            <!--First card-->
+                        </div>
+                        <div class="swiper-slide">
+                            <!--First card-->
+                            <div class="review-card">
+                                <div class="review-image">
+                                    <img src="{% static '/source/review_image.png' %}" alt="">
+                                </div>
+                                <div class="review-name">
+                                    Sachin Kumar
+                                </div>
+                                <div class="review-company">
+                                    Company Name
+                                </div>
+                                <div class="review-rate">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="review-button">
+                                        <input type="button" id="learn_review" name="more" style="display: block;opacity: 1;" value="Read more">
+                                </div>
+                            </div>
+                            <!--First card-->
+                        </div>
+                        <div class="swiper-slide">
+                            <!--First card-->
+                            <div class="review-card">
+                                <div class="review-image">
+                                    <img src="{% static '/source/review_image.png' %}" alt="">
+                                </div>
+                                <div class="review-name">
+                                    Sachin Kumar
+                                </div>
+                                <div class="review-company">
+                                    Company Name
+                                </div>
+                                <div class="review-rate">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="review-button">
+                                        <input type="button" id="learn_review" name="more" style="display: block;opacity: 1;" value="Read more">
+                                </div>
+                            </div>
+                            <!--First card-->
+                        </div>
+                        <div class="swiper-slide">
+                            <!--First card-->
+                            <div class="review-card">
+                                <div class="review-image">
+                                    <img src="{% static '/source/review_image.png' %}" alt="">
+                                </div>
+                                <div class="review-name">
+                                    Sachin Kumar
+                                </div>
+                                <div class="review-company">
+                                    Company Name
+                                </div>
+                                <div class="review-rate">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="review-button">
+                                        <input type="button" id="learn_review" name="more" style="display: block;opacity: 1;" value="Read more">
+                                </div>
+                            </div>
+                            <!--First card-->
+                        </div>
+                        <div class="swiper-slide">
+                            <!--First card-->
+                            <div class="review-card">
+                                <div class="review-image">
+                                    <img src="{% static '/source/review_image.png' %}" alt="">
+                                </div>
+                                <div class="review-name">
+                                    Sachin Kumar
+                                </div>
+                                <div class="review-company">
+                                    Company Name
+                                </div>
+                                <div class="review-rate">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="review-button">
+                                        <input type="button" id="learn_review" name="more" style="display: block;opacity: 1;" value="Read more">
+                                </div>
+                            </div>
+                            <!--First card-->
+                        </div>
+                        <div class="swiper-slide">
+                            <!--First card-->
+                            <div class="review-card">
+                                <div class="review-image">
+                                    <img src="{% static '/source/review_image.png' %}" alt="">
+                                </div>
+                                <div class="review-name">
+                                    Sachin Kumar
+                                </div>
+                                <div class="review-company">
+                                    Company Name
+                                </div>
+                                <div class="review-rate">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="review-button">
+                                        <input type="button" id="learn_review" name="more" style="display: block;opacity: 1;" value="Read more">
+                                </div>
+                            </div>
+                            <!--First card-->
+                        </div>
+                        <div class="swiper-slide">
+                            <!--First card-->
+                            <div class="review-card">
+                                <div class="review-image">
+                                    <img src="{% static '/source/review_image.png' %}" alt="">
+                                </div>
+                                <div class="review-name">
+                                    Sachin Kumar
+                                </div>
+                                <div class="review-company">
+                                    Company Name
+                                </div>
+                                <div class="review-rate">
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                    <div class="star"></div>
+                                </div>
+                                <div class="review-button">
+                                        <input type="button" id="learn_review" name="more" style="display: block;opacity: 1;" value="Read more">
+                                </div>
+                            </div>
+                            <!--First card-->
+                        </div>
 
+                    </div>
 
-<div class="socials">
-    <div class="twitter">
-        <a href="#"><img src="{% static '/source/twitter.png' %}" alt=""></a>
-    </div>
-    <div class="facebook">
-            <a href="#"><img src="{% static '/source/facebook.png' %}" alt=""></a>
-    </div>
-</div>
-          </section>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination swiper-pagination-review"></div>
+                    <div class="review-button-prev swiper-button-prev swiper-button-white"></div>
+                    <div class="review-button-next swiper-button-next swiper-button-white"></div>
+                </div>
+            </div>
 
-<!--Partners-->
-          <section class="background">
-<!--Page title-->
-<div class="title">
-    <div class="title-line">
+            <!--Contacts Block-->
+            <div class="swiper-slide" data-hash="contact">
+                <div class="title" data-swiper-parallax="0%" data-swiper-parallax-opacity="0">
+                    <div class="title-line">
 
-    </div>
-    <div class="title-number">
-        05
-    </div>
-    <div class="title-line">
+                    </div>
+                    <div class="title-name">
+                        Let's discuss
+                    </div>
+                </div>
+                <!--Corners-->
+                <div class="top-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
+                <div class="bot-corner" data-swiper-parallax="0%" data-swiper-parallax-opacity="0"></div>
 
-    </div>
-    <div class="title-name">
-        Thinking Out Loud
-    </div>
-</div>
+                <div class="contact-form">
+                    <span class="form-success" id="form-success"></span>
 
-<!--Corners-->
-<div class="top-corner"></div>
-<div class="bot-corner"></div>
+                    <form class="col s12 m12 l12" id="test" method="post" data-swiper-parallax="0%" data-swiper-parallax-opacity="0">{% csrf_token %}
+                        <div class="row">
+                            <div class="input-field col s12 m6 xl6">
+                                <input id="contact_name" name="contact_name" type="text" class="validate" required>
+                                <label class="active" for="contact_name">Name</label>
+                            </div>
 
-<div class="review-card-wrapper">
+                            <div class="input-field col s12 m6 xl6">
+                                <input id="contact_email" name="contact_email" type="email" class="validate" required>
+                                <label class="active" for="contact_email">Email</label>
+                            </div>
 
-<!--First card-->
-<div class="review-card">
-    <div class="review-image">
-        <img src="{% static '/source/review_image.png' %}" alt="">
-    </div>
-    <div class="review-name">
-        Sachin Kumar
-    </div>
-    <div class="review-company">
-        Company Name
-    </div>
-    <div class="review-rate">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
-    <div class="review-button">
-                        <div class="tech-more">
-                            <input type="checkbox" id="learn_check_user" name="more">
-                            <label id="read_review" for="learn_check_user">Read More</label>
-                            <div class="learn_modal-user">
-                                <label id="learn_more_user" for="learn_check_user"></label>
-                                <div class="learn-modal-content">
-                                    <div class="learn-modal-header">
-                                        Python
-                                    </div>
-                                    <div class="learn-modal-sides">
-                                            Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                    </div>
-                                    <div class="learn-modal-desc">
-                                        Description:
-                                    </div>
-                                    <div class="learn-modal-desctext">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                    </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="content" name="content" class="materialize-textarea" rows="1" required></textarea>
+                                    <label for="content">Message</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 m12 xl12">
+                                    <input type="submit" id="contact-button" value="Send e-mail">
+                                    <label id="contact-label" for="contact-button">Contact me</label>
                                 </div>
                             </div>
                         </div>
-    </div>
-</div>
+                    </form>
+                </div>
 
-<!--second card-->
-<div class="review-card">
-    <div class="review-image">
-        <img src="{% static '/source/review_image.png' %}" alt="">
-    </div>
-    <div class="review-name">
-        Sachin Kumar
-    </div>
-    <div class="review-company">
-        Company Name
-    </div>
-    <div class="review-rate">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
-    <div class="review-button">
-                        <div class="tech-more">
-                            <input type="checkbox" id="learn_check_user2" name="more">
-                            <label id="read_review" for="learn_check_user2">Read More</label>
-                            <div class="learn_modal-user2">
-                                <label id="learn_more_user2" for="learn_check_user2"></label>
-                                <div class="learn-modal-content">
-                                    <div class="learn-modal-header">
-                                        Python
-                                    </div>
-                                    <div class="learn-modal-sides">
-                                            Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                    </div>
-                                    <div class="learn-modal-desc">
-                                        Description:
-                                    </div>
-                                    <div class="learn-modal-desctext">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    </div>
-</div>
-
-<!--third card-->
-<div class="review-card">
-        <div class="review-image">
-            <img src="{% static '/source/review_image.png' %}" alt="">
-        </div>
-        <div class="review-name">
-            Sachin Kumar
-        </div>
-        <div class="review-company">
-            Company Name
-        </div>
-        <div class="review-rate">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-        </div>
-        <div class="review-button">
-                            <div class="tech-more">
-                                <input type="checkbox" id="learn_check_user3" name="more">
-                                <label id="read_review" for="learn_check_user3">Read More</label>
-                                <div class="learn_modal-user3">
-                                    <label id="learn_more_user" for="learn_check_user3"></label>
-                                    <div class="learn-modal-content">
-                                        <div class="learn-modal-header">
-                                            Python
-                                        </div>
-                                        <div class="learn-modal-sides">
-                                                Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                        </div>
-                                        <div class="learn-modal-desc">
-                                            Description:
-                                        </div>
-                                        <div class="learn-modal-desctext">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        </div>
-    </div>
-
-    <!--fourth card-->
-<div class="review-card">
-        <div class="review-image">
-            <img src="{% static '/source/review_image.png' %}" alt="">
-        </div>
-        <div class="review-name">
-            Sachin Kumar
-        </div>
-        <div class="review-company">
-            Company Name
-        </div>
-        <div class="review-rate">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-        </div>
-        <div class="review-button">
-                            <div class="tech-more">
-                                <input type="checkbox" id="learn_check_user4" name="more">
-                                <label id="read_review" for="learn_check_user4">Read More</label>
-                                <div class="learn_modal-user4">
-                                    <label id="learn_more_user" for="learn_check_user4"></label>
-                                    <div class="learn-modal-content">
-                                        <div class="learn-modal-header">
-                                            Python
-                                        </div>
-                                        <div class="learn-modal-sides">
-                                                Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                        </div>
-                                        <div class="learn-modal-desc">
-                                            Description:
-                                        </div>
-                                        <div class="learn-modal-desctext">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        </div>
-    </div>
-
-    <!--fifth card-->
-<div class="review-card">
-        <div class="review-image">
-            <img src="{% static '/source/review_image.png' %}" alt="">
-        </div>
-        <div class="review-name">
-            Sachin Kumar
-        </div>
-        <div class="review-company">
-            Company Name
-        </div>
-        <div class="review-rate">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-        </div>
-        <div class="review-button">
-                            <div class="tech-more">
-                                <input type="checkbox" id="learn_check_user5" name="more">
-                                <label id="read_review" for="learn_check_user5">Read More</label>
-                                <div class="learn_modal-user5">
-                                    <label id="learn_more_user" for="learn_check_user5"></label>
-                                    <div class="learn-modal-content">
-                                        <div class="learn-modal-header">
-                                            Python
-                                        </div>
-                                        <div class="learn-modal-sides">
-                                                Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                        </div>
-                                        <div class="learn-modal-desc">
-                                            Description:
-                                        </div>
-                                        <div class="learn-modal-desctext">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        </div>
-    </div>
-
-    <!--sixth card-->
-<div class="review-card">
-        <div class="review-image">
-            <img src="{% static '/source/review_image.png' %}" alt="">
-        </div>
-        <div class="review-name">
-            Sachin Kumar
-        </div>
-        <div class="review-company">
-            Company Name
-        </div>
-        <div class="review-rate">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-        </div>
-        <div class="review-button">
-                            <div class="tech-more">
-                                <input type="checkbox" id="learn_check_user6" name="more">
-                                <label id="read_review" for="learn_check_user6">Read More</label>
-                                <div class="learn_modal-user6">
-                                    <label id="learn_more_user" for="learn_check_user6"></label>
-                                    <div class="learn-modal-content">
-                                        <div class="learn-modal-header">
-                                            Python
-                                        </div>
-                                        <div class="learn-modal-sides">
-                                                Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                        </div>
-                                        <div class="learn-modal-desc">
-                                            Description:
-                                        </div>
-                                        <div class="learn-modal-desctext">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        </div>
-    </div>
-
-    <!--seventh card-->
-<div class="review-card">
-        <div class="review-image">
-            <img src="{% static '/source/review_image.png' %}" alt="">
-        </div>
-        <div class="review-name">
-            Sachin Kumar
-        </div>
-        <div class="review-company">
-            Company Name
-        </div>
-        <div class="review-rate">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-        </div>
-        <div class="review-button">
-                            <div class="tech-more">
-                                <input type="checkbox" id="learn_check_user7" name="more">
-                                <label id="read_review" for="learn_check_user7">Read More</label>
-                                <div class="learn_modal-user7">
-                                    <label id="learn_more_user" for="learn_check_user7"></label>
-                                    <div class="learn-modal-content">
-                                        <div class="learn-modal-header">
-                                            Python
-                                        </div>
-                                        <div class="learn-modal-sides">
-                                                Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                        </div>
-                                        <div class="learn-modal-desc">
-                                            Description:
-                                        </div>
-                                        <div class="learn-modal-desctext">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        </div>
-    </div>
-
-    <!--eight card-->
-<div class="review-card">
-        <div class="review-image">
-            <img src="{% static '/source/review_image.png' %}" alt="">
-        </div>
-        <div class="review-name">
-            Sachin Kumar
-        </div>
-        <div class="review-company">
-            Company Name
-        </div>
-        <div class="review-rate">
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-            <div class="star"></div>
-        </div>
-        <div class="review-button">
-                            <div class="tech-more">
-                                <input type="checkbox" id="learn_check_user8" name="more">
-                                <label id="read_review" for="learn_check_user8">Read More</label>
-                                <div class="learn_modal-user8">
-                                    <label id="learn_more_user" for="learn_check_user8"></label>
-                                    <div class="learn-modal-content">
-                                        <div class="learn-modal-header">
-                                            Python
-                                        </div>
-                                        <div class="learn-modal-sides">
-                                                Artificial Intelligence, Computer Vision,  Data Science, Machine Learning, Natural Language Processing
-                                        </div>
-                                        <div class="learn-modal-desc">
-                                            Description:
-                                        </div>
-                                        <div class="learn-modal-desctext">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        </div>
-    </div>
-
-
-</div>
-
-<div class="socials">
-    <div class="twitter">
-        <a href="#"><img src="{% static '/source/twitter.png' %}" alt=""></a>
-    </div>
-    <div class="facebook">
-            <a href="#"><img src="{% static '/source/facebook.png' %}" alt=""></a>
-    </div>
-</div>
-          </section>
-        <div class="page-controls">
-            <div class="page-counter counter-active" id="next-item" onclick="javascript:clickControl(1,this.id);"></div>
-            <div class="page-counter" onclick="javascript:clickControl(2,this.id);"></div>
-            <div class="page-counter" onclick="javascript:clickControl(3,this.id);"></div>
-            <div class="page-counter" onclick="javascript:clickControl(4,this.id);"></div>
-            <div class="page-counter" onclick="javascript:clickControl(5,this.id);"></div>
-            <div class="page-counter" onclick="javascript:clickControl(6,this.id);"></div>
-        </div>
-
-      <!--Page title-->
- <div class="title-last">
-        <div class="title-line-last">
-    
-        </div>
-        <div class="title-number-last">
-            06
-        </div>
-        <div class="title-line-last">
-    
-        </div>
-        <div class="title-name-last">
-            Let's discuss
-        </div>
-    </div>
-    
-    <!--Corners-->
-    <div class="top-corner-last"></div>
-    <div class="bot-corner-last"></div>
-    <div class="contact-header">
-        Leave Your contacts in form below and we will get in touch with You!
-    </div>
-    <div class="contact-form">
-    <form class="col s12" method="post" id="test">{% csrf_token %}
-        <div class="row" >
-            <span id="form-success" style="display: none;"></span>
-            <div class="input-field col s6">
-              <input id="contact_name" name="contact_name" type="text" class="validate" required>
-              <label class="active" for="contact_name">Name</label>
+                <div class="socials">
+                    <div class="inst">
+                        <a href="#">
+                            <img src="{% static '/source/instagram-new.png' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="twitter">
+                        <a href="#">
+                            <img src="{% static '/source/twitter-icon.png' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="facebook">
+                        <a href="#">
+                            <img src="{% static '/source/facebook_new.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <div class="input-field col s6">
-                    <input id="contact_email" name="contact_email" type="email" class="validate" required>
-                    <label class="active" for="contact_email">Email</label>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="content" name="content" class="materialize-textarea" required></textarea>
-                <label for="content">Textarea</label>
-              </div>
-            </div>
-            <input type="submit" id="contact-button" value="Send e-mail">
-            <label id="contact-label" for="contact-button">Contact me</label>
         </div>
-    </form>
+
+
     </div>
-    
-    <div class="socials-last">
-        <div class="twitter-last">
-            <a href="#">
-
-                <img src="{% static '/source/twitter.png' %}" alt="">
-            </a>
-        </div>
-        <div class="facebook-last">
-
-                <a href="#">
-
-                    <img src="{% static '/source/facebook.png' %}" alt="">
-                </a>
-        </div>
-
-        <script src="{% static '/slider.js' %}"></script>
-        <script src="{% static '/submiting_form.js' %}"
-        <script>
-                $('#textarea1').val('New Text');
-            $('#textarea1').trigger('autoresize');
-            </script>
-              <!--Import jQuery before materialize.js-->
-              <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-           <!-- Compiled and minified JavaScript -->
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-            <script>$('input[type="checkbox"]').on('change', function() {
-        $('input[type="checkbox"]').not(this).prop('checked', false);
-     });</script>
+    <script src="{% static '/modal.js' %}"></script>
+    <script src="{% static '/submiting_form.js' %}"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiperH = new Swiper('.swiper-container-h', {
+            simulateTouch:false,
+            spaceBetween: 0,
+            speed: 1000,
+            parallax: true,
+            pagination: {
+                el: '.swiper-pagination-h',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        
+        var swiperV = new Swiper('.swiper-container-v', {
+            simulateTouch:false,
+            hashNavigation: {
+                watchState: true,
+            },
+            direction: 'vertical',
+            speed: 1000,
+            parallax: true,
+            mousewheel: true,
+            spaceBetween: 0,
+            pagination: {
+                el: '.swiper-pagination-v',
+                clickable: true,
+            },
+        });
+        $(function(){
+  function fixSwiper(){
+    $('.swiper-slide').css({minHeight: $('.body').height()});
+  }
+  fixSwiper();
+  $(window).resize(function(){
+    fixSwiper();
+  })
+})
+        var swiperR = new Swiper('.swiper-container-review', {
+            simulateTouch:false,
+            spaceBetween: 50,
+            slidesPerView: 4,
+            slidesPerColumn: 1,
+            speed: 1000,
+            navigation: {
+                nextEl: '.review-button-next',
+                prevEl: '.review-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination-review',
+                clickable: true,
+            },
+            breakpoints: {
+                // when window width is <= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                // when window width is <= 480px
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is <= 640px
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                },
+                // when window width is <= 768px
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 0
+                },                // when window width is <= 768px
+                1280: {
+                    slidesPerView: 2,
+                    spaceBetween: 50
+                }
+            },
+        });
+        var swiperT = new Swiper('.swiper-container-tech', {
+            simulateTouch:false,
+            spaceBetween:20,
+            slidesPerView: 4,
+            slidesPerColumn: 1,
+            speed: 1000,
+            navigation: {
+                nextEl: '.tech-button-next',
+                prevEl: '.tech-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination-tech',
+                clickable: true,
+            },
+            breakpoints: {
+                // when window width is <= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                // when window width is <= 480px
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is <= 640px
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                },
+                // when window width is <= 768px
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 0
+                },                // when window width is <= 1280px
+                1280: {
+                    slidesPerView: 2,
+                    spaceBetween: 50
+                },
+                1920:{
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                }
+            },
+        });
+    </script>
 </body>
+
 </html>
